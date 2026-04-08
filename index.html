@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminhão Pipa em Bangu e Região | Água Marques - Entrega Rápida RJ</title>
+    <meta name="description" content="Ficou sem água em Bangu, Campo Grande ou Realengo? Caminhão pipa com entrega rápida no Rio de Janeiro. Atendimento imediato via WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: #08090C;
+            color: #F2F4F8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(8, 9, 12, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 111, 212, 0.2);
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-highlight {
+            color: #1A6FD4;
+        }
+        
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #1A6FD4;
+            color: #F2F4F8;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-phone:hover {
+            background: #4D9FFF;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            padding: 60px 20px 80px;
+            background: linear-gradient(135deg, rgba(26, 111, 212, 0.08) 0%, rgba(8, 9, 12, 0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 111, 212, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(26, 111, 212, 0.15);
+            color: #4D9FFF;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(26, 111, 212, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero-highlight {
+            color: #1A6FD4;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #8892A4;
+            margin-bottom: 35px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        .proof-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(26, 111, 212, 0.2);
+            border-bottom: 1px solid rgba(26, 111, 212, 0.2);
+        }
+        
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .proof-icon {
+            font-size: 24px;
+        }
+        
+        .proof-text {
+            font-size: 15px;
+            color: #F2F4F8;
+            font-weight: 600;
+        }
+        
+        .bairros-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+        
+        .bairro-tag {
+            background: rgba(26, 111, 212, 0.1);
+            color: #4D9FFF;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(26, 111, 212, 0.3);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #1A6FD4;
+            color: #F2F4F8;
+            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #4D9FFF;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(26, 111, 212, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #F2F4F8;
+            border: 2px solid #1A6FD4;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(26, 111, 212, 0.1);
+            border-color: #4D9FFF;
+        }
+        
+        /* Seção Dores */
+        .dores-section {
+            padding: 80px 20px;
+            background: #08090C;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #F2F4F8;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #8892A4;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .dores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dor-card {
+            background: rgba(26, 111, 212, 0.05);
+            border: 1px solid rgba(26, 111, 212, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .dor-card:hover {
+            transform: translateY(-5px);
+            border-color: #1A6FD4;
+            background: rgba(26, 111, 212, 0.08);
+        }
+        
+        .dor-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .dor-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #F2F4F8;
+            font-weight: 700;
+        }
+        
+        .dor-card p {
+            color: #8892A4;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Diferenciais */
+        .diferenciais-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #08090C 0%, rgba(26, 111, 212, 0.05) 100%);
+        }
+        
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .diferencial-card {
+            background: rgba(8, 9, 12, 0.6);
+            border: 1px solid rgba(26, 111, 212, 0.3);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .diferencial-card:hover {
+            transform: translateY(-5px);
+            border-color: #1A6FD4;
+            box-shadow: 0 10px 40px rgba(26, 111, 212, 0.2);
+        }
+        
+        .diferencial-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .diferencial-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #F2F4F8;
+            font-weight: 700;
+        }
+        
+        .diferencial-card p {
+            color: #8892A4;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Como Funciona */
+        .como-funciona-section {
+            padding: 80px 20px;
+            background: #08090C;
+        }
+        
+        .passos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .passo {
+            text-align: center;
+            position: relative;
+        }
+        
+        .passo-numero {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1A6FD4 0%, #4D9FFF 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            color: #F2F4F8;
+            font-family: 'Barlow Condensed', sans-serif;
+            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
+        }
+        
+        .passo h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #F2F4F8;
+            font-weight: 700;
+        }
+        
+        .passo p {
+            color: #8892A4;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Área de Cobertura */
+        .cobertura-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #08090C 0%, rgba(26, 111, 212, 0.05) 100%);
+        }
+        
+        .bairros-cobertura {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+        .bairro-cobertura {
+            background: rgba(26, 111, 212, 0.1);
+            color: #4D9FFF;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid rgba(26, 111, 212, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .bairro-cobertura:hover {
+            background: rgba(26, 111, 212, 0.2);
+            border-color: #1A6FD4;
+            transform: translateY(-2px);
+        }
+        
+        /* Mapa */
+        .mapa-section {
+            padding: 80px 20px;
+            background: #08090C;
+        }
+        
+        .mapa-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 60px rgba(26, 111, 212, 0.3);
+        }
+        
+        .mapa-wrapper {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        
+        .mapa-radar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .radar-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #1A6FD4;
+            border-radius: 50%;
+            opacity: 0;
+            animation: radar-pulse 3s ease-out infinite;
+        }
+        
+        .radar-ring:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+        }
+        
+        .radar-ring:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            animation-delay: 1s;
+        }
+        
+        .radar-ring:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            animation-delay: 2s;
+        }
+        
+        .radar-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #1A6FD4;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(26, 111, 212, 0.8);
+        }
+        
+        @keyframes radar-pulse {
+            0% {
+                width: 60px;
+                height: 60px;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+        
+        .mapa-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85);
+        }
+        
+        /* CTA Final */
+        .cta-final-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(26, 111, 212, 0.15) 0%, #08090C 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-final-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 111, 212, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-final-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-final-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #F2F4F8;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .cta-final-content p {
+            font-size: 20px;
+            color: #8892A4;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .cta-badge {
+            background: rgba(26, 111, 212, 0.1);
+            border: 1px solid rgba(26, 111, 212, 0.3);
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: #4D9FFF;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(8, 9, 12, 0.95);
+            border-top: 1px solid rgba(26, 111, 212, 0.2);
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #F2F4F8;
+            font-weight: 700;
+        }
+        
+        .footer-col p,
+        .footer-col a {
+            color: #8892A4;
+            font-size: 15px;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a:hover {
+            color: #4D9FFF;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(26, 111, 212, 0.2);
+            color: #8892A4;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #4D9FFF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer-bottom a:hover {
+            color: #1A6FD4;
+        }
+        
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-whats 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+        
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        
+        @keyframes pulse-whats {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+        
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .nav-phone span {
+                display: none;
+            }
+            
+            .proof-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-final-content h2 {
+                font-size: 32px;
+            }
+            
+            .mapa-wrapper {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <span class="logo-highlight">Água</span> Marques
+            </div>
+            <a href="https://wa.me/5521965453157" class="nav-phone">
+                <span>📱</span>
+                <span>(21) 96545-3157</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚨 Atendimento Emergencial em Bangu e Região</div>
+            <h1 class="reveal">
+                Ficou Sem Água em <span class="hero-highlight">Bangu, Campo Grande ou Realengo</span>?
+            </h1>
+            <p class="hero-subtitle reveal">
+                Sabemos o quanto é desesperador ficar sem água em casa, no comércio ou na obra. Caminhão pipa com entrega rápida e água de qualidade para toda Zona Oeste do Rio de Janeiro.
+            </p>
+            
+            <div class="proof-bar reveal">
+                <div class="proof-item">
+                    <span class="proof-icon">✓</span>
+                    <span class="proof-text">Centenas de famílias atendidas</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-icon">⚡</span>
+                    <span class="proof-text">Entrega no mesmo dia</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-icon">💧</span>
+                    <span class="proof-text">Água tratada e limpa</span>
+                </div>
+            </div>
+
+            <div class="bairros-tags reveal">
+                <span class="bairro-tag">📍 Bangu</span>
+                <span class="bairro-tag">📍 Campo Grande</span>
+                <span class="bairro-tag">📍 Realengo</span>
+                <span class="bairro-tag">📍 Padre Miguel</span>
+                <span class="bairro-tag">📍 Santíssimo</span>
+                <span class="bairro-tag">📍 Senador Camará</span>
+            </div>
+
+            <div class="hero-buttons reveal">
+                <a href="https://wa.me/5521965453157" class="btn btn-primary">
+                    <span>💬</span> Solicitar Orçamento Agora
+                </a>
+                <a href="tel:+5521965453157" class="btn btn-secondary">
+                    <span>📞</span> Ligar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Dores -->
+    <section class="dores-section">
+        <div class="container">
+            <h2 class="section-title reveal">A Falta de Água Não Pode Parar Seu Dia</h2>
+            <p class="section-subtitle reveal">Reconhecemos a urgência. Veja situações que atendemos todos os dias na Zona Oeste:</p>
+            
+            <div class="dores-grid">
+                <div class="dor-card reveal">
+                    <span class="dor-icon">🏠</span>
+                    <h3>Caixa d'água Seca em Casa</h3>
+                    <p>Falta de água da rua? Sua família precisa de água limpa para beber, cozinhar e higiene básica. Entregamos rápido para você não ficar na mão.</p>
+                </div>
+                
+                <div class="dor-card reveal">
+                    <span class="dor-icon">🏗️</span>
+                    <h3>Obra Parada por Falta de Água</h3>
+                    <p>Cada dia parado é prejuízo. Fornecemos água em quantidade e no prazo para sua construção não atrasar.</p>
+                </div>
+                
+                <div class="dor-card reveal">
+                    <span class="dor-icon">🏪</span>
+                    <h3>Comércio Sem Poder Funcionar</h3>
+                    <p>Restaurante, mercado, salão? Sem água você não abre as portas. Entrega imediata para seu negócio voltar ao normal.</p>
+                </div>
+                
+                <div class="dor-card reveal">
+                    <span class="dor-icon">⚠️</span>
+                    <h3>Emergência em Condomínio</h3>
+                    <p>Moradores reclamando e síndico pressionado? Temos capacidade para abastecer condomínios inteiros com agilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="diferenciais-section">
+        <div class="container">
+            <h2 class="section-title reveal">Por Que Escolher a Água Marques?</h2>
+            <p class="section-subtitle reveal">Experiência, comprometimento e atendimento que fazem a diferença na Zona Oeste.</p>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-card reveal">
+                    <span class="diferencial-icon">⚡</span>
+                    <h3>Resposta Imediata</h3>
+                    <p>Atendemos pelo WhatsApp e telefone. Orçamento rápido e entrega no mesmo dia quando possível.</p>
+                </div>
+                
+                <div class="diferencial-card reveal">
+                    <span class="diferencial-icon">💧</span>
+                    <h3>Água de Qualidade</h3>
+                    <p>Água tratada e própria para uso residencial, comercial e industrial. Sua segurança é prioridade.</p>
+                </div>
+                
+                <div class="diferencial-card reveal">
+                    <span class="diferencial-icon">🚛</span>
+                    <h3>Frota Preparada</h3>
+                    <p>Caminhões em excelente estado e motoristas experientes que conhecem toda a região.</p>
+                </div>
+                
+                <div class="diferencial-card reveal">
+                    <span class="diferencial-icon">💳</span>
+                    <h3>Formas de Pagamento</h3>
+                    <p>Aceitamos PIX, dinheiro, cartão ou transferência. Facilitamos para você resolver rápido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
